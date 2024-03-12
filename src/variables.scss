@@ -1,3 +1,4 @@
+/* Define global CSS variables */
 :root {
   overflow-x: hidden;
   --color-primary: #151617;
@@ -7,6 +8,7 @@
   --spacing: 1rem;
 }
 
+/* Apply global styles to the body */
 body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--color-primary);

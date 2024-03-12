@@ -47,6 +47,7 @@ const Home = () => {
             (!filters.genre || game.genres.some((genre) => genre.name === filters.genre))
         );
     });
+    
     const gamesToDisplay = filters.platform || filters.genre ? filteredGames : popular;
    
      //affichage des recommandations - si utilisateur connecté
