@@ -22,24 +22,38 @@ const Home = () => {
     const [displayedPlatforms, setDisplayedPlatforms] = useState({});
 
     const recommendations = async () => {
-
-        if(isAuthenticated){
-           
-                const GenreID = details.genres.map(id => id.GenreID);
-                const userGenre = GenreID.join(',');
-                const PlatformID = details.platforms.map(id => id.PlatformID);
-                const userPlatform = PlatformID.join(',');
-                const genreAndPlatformMatch = await axios.get(`https://game-den-back.onrender.com/api/ext/recommendations?genres=${userGenre}&platforms=${userPlatform}`);
-                const reco = genreAndPlatformMatch.data;
-                setIsLoading(false);
-                setRecoGames(reco);
+        // Defines an asynchronous function named 'recommendations'.
+    
+        if (isAuthenticated) {
+            // Checks if the user is authenticated.
+    
+            const GenreID = details.genres.map(id => id.GenreID);
+            // Extracts an array of Genre IDs from the 'details.genres' array.
+            const userGenre = GenreID.join(',');
+            // Joins Genre IDs into a comma-separated string.
+    
+            const PlatformID = details.platforms.map(id => id.PlatformID);
+            // Extracts an array of Platform IDs from the 'details.platforms' array.
+            const userPlatform = PlatformID.join(',');
+            // Joins Platform IDs into a comma-separated string.
+    
+            const genreAndPlatformMatch = await axios.get(`https://game-den-back.onrender.com/api/ext/recommendations?genres=${userGenre}&platforms=${userPlatform}`);
+            // Performs an HTTP GET request to fetch game recommendations based on user's preferred genres and platforms.
+            const reco = genreAndPlatformMatch.data;
+            // Extracts recommendation data from the response.
+    
+            setIsLoading(false);
+            // Updates the local loading state to indicate that loading is complete.
+            setRecoGames(reco);
+            // Sets the recommended games using 'setRecoGames'.
         }
-
     };
-
+    
     useEffect(() => {
-       recommendations();
-    }, [isAuthenticated, details.genres, details.platforms]); 
+        recommendations();
+    }, [isAuthenticated, details.genres, details.platforms]);
+    // Calls 'recommendations' when dependencies change: 'isAuthenticated', 'details.genres', and 'details.platforms'.
+    
 
      const filteredGames = popular && popular.filter((game) => {
         return (
