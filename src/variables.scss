@@ -1,0 +1,16 @@
+/* Define global CSS variables */
+:root {
+  overflow-x: hidden;
+  --color-primary: #151617;
+  --color-secondary: #2A2D31;
+  --color-tertiary: #3F4248;
+  --color-quaternary: #B5BAC0;
+  --spacing: 1rem;
+}
+
+/* Apply global styles to the body */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--color-primary);
+  box-sizing: border-box;
+}

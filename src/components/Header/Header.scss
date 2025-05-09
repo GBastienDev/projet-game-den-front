@@ -1,0 +1,211 @@
+.header{
+
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    background: rgba(14, 14, 14, 0.9);
+
+    &__link{
+        width: 25%;
+        height: 10vh;
+        padding-left: calc(1.5*var(--spacing));
+    }
+
+    &__logo{
+        width: 40vw;
+        height: 100%;
+        
+    }
+
+    &__form{
+        width: 100%;
+        height: 5vh;
+        position: absolute;
+        top: 60%;
+        display: flex;
+    }
+
+    &__input{
+        width: 90%;
+        height: 4vh;
+        border-radius: var(--spacing);
+        background-color: white;
+        margin: auto;
+        padding : 2px;
+        border-style: none;
+    }
+
+    &__input::placeholder{
+        color: var(--color-primary);
+        
+    }
+
+    &__login{
+        font-size: calc(var(--spacing)/1.2);
+        color: var(--color-quaternary);
+        position: absolute;
+        right: calc(var(--spacing) / 2);
+        top: 36%;
+        transform: translateY(-65%);
+        padding-right: var(--spacing);
+        text-decoration: none;
+    }
+
+    &__pseudo{
+        font-size: 1.2rem;
+        color: var(--color-quaternary);
+        position: absolute;
+        top: 36%;
+        right: calc(var(--spacing) / 2);
+        transform: translateY(-65%);
+        padding-right: calc(4.5*var(--spacing));
+    }
+
+    &__like-link{
+        position: absolute;
+        right: calc(var(--spacing) / 2);
+        top: 36%;
+        transform: translateY(-65%);
+        padding-right: calc(var(--spacing)*2.8);
+    }
+
+    &__profil-link{
+        color: var(--color-quaternary);
+        position: absolute;
+        right: calc(var(--spacing) / 2);
+        top: 36%;
+        transform: translateY(-65%);
+        padding-right: var(--spacing);
+    }
+
+    &__like-img{
+        width: calc(var(--spacing)* 1.3);
+        height: calc(var(--spacing)* 1.3);
+    }
+    
+
+    &__profil-img{
+        width: calc(var(--spacing)*1.3);
+        height: calc(var(--spacing)*1.3);
+        &:active {
+        transform: scale(1.10);
+    }
+    }
+   
+}
+@media screen and (min-width: 476px){
+    .header{
+        &__pseudo{
+            font-size: 1.5rem;
+            padding-right: calc(5*var(--spacing));
+        }
+
+        &__like-link{
+            padding-right: calc(3*var(--spacing));
+        }
+
+        &__like-img{
+            width: calc(var(--spacing)* 1.5);
+            height: calc(var(--spacing)* 1.5);
+        }
+
+        &__profil-img{
+            width: calc(var(--spacing)* 1.5);
+            height: calc(var(--spacing)*1.5);
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    .header{
+        height: 10vh;
+
+        &__link{
+            width: 15%;
+        }
+
+        &__form {
+             max-width: 55%;
+            top: 45%;
+            left: 20%;
+            transform: translateY(-30%);
+        }
+
+        &__input {
+            align-items: center;
+        }
+            
+        &__login{
+            top: 55%;
+            padding-right: calc(2*var(--spacing));
+            font-size: calc(1.3*var(--spacing));
+
+            &:hover{
+                transition-duration: 0.8s;
+                transition: all 0.8s ease-in-out;
+                color: white;
+            }
+        }
+
+
+        &__logo{
+            width: 100%;
+            height: 100%;
+
+        }
+
+        &__pseudo{
+            top: 55%;
+            padding-right: calc(5*var(--spacing));
+        }
+        
+        &__like-link{
+            top: 55%;
+            padding-right: calc(3*var(--spacing));
+        }
+
+        &__profil-link{
+            top: 55%;
+            padding-right: var(--spacing);
+
+
+        }
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .header{
+        &__link{
+            width: 14%;
+        }
+
+        &__pseudo{
+            font-size: 1.8rem;
+            padding-right: calc(7*var(--spacing));
+            top : 58%;
+        }
+
+        &__like-link{
+            padding-right: calc(4.5*var(--spacing));
+            top : 58%;
+        }
+
+        &__profil-link{
+            padding-right: calc(2*var(--spacing));
+            top : 58%;
+        }
+
+        &__like-img{
+            width: calc(2*var(--spacing));
+            height: calc(2*var(--spacing));
+        }
+
+        &__profil-img{
+            width: calc(2*var(--spacing));
+            height: calc(2*var(--spacing));
+        }
+    }
+}
